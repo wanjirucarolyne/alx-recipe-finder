@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css'
 import SearchBar from "./components/SearchBar"
 import RecipeCard from "./components/RecipeCard"
-
+import Landing from "./components/Landing"
 const apiUrl ="https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 function App() {
@@ -41,8 +41,10 @@ const handleSubmit = event =>{
 
   return (
     
+    
       <div className='container'>
-        <h2>DELIGHT RECIPES</h2>
+        <Landing/>
+        <h2></h2>
 
         <SearchBar
         handleSubmit={handleSubmit}
@@ -53,6 +55,7 @@ const handleSubmit = event =>{
 
         
         />
+        
         <div className="recipes">
 
           {recipes? recipes.map(recipe => (
