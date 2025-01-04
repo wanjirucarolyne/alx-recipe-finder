@@ -31,10 +31,28 @@ useEffect(()=> {
   searchRecipes()
 
 }, []);
+
+
+
+const handleSubmit = event =>{
+  event.preventDefault()
+  searchRecipes()
+};
+
   return (
     
       <div className='container'>
         <h2>DELIGHT RECIPES</h2>
+
+        <SearchBar
+        handleSubmit={handleSubmit}
+        value={query}
+        onChange={event => setQuery(event.target.value)}
+        isLoading={isLoading} 
+
+
+        
+        />
         <div className="recipes">
 
           {recipes? recipes.map(recipe => (

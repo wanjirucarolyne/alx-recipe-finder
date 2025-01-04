@@ -1,10 +1,29 @@
 import React from "react";
 
-const SearchBar = (props) => {
+const SearchBar = ({
+    value,
+    isLoading,
+    handleSubmit,
+    onChange
+}) => {
     return(
-        <div>
+        <form onSubmit={handleSubmit}>
+            <input
+            value={value}
+            disabled={isLoading}
+            onChange={onChange}
+            placeholder="Search Recipes"
+            className="form-control"
+            
+            />
 
-        </div>
+            <input
+            type="submit"
+            disabled={isLoading || !value}
+            className="btn" 
+            value="search"
+            />
+        </form>
     )
 };
 
