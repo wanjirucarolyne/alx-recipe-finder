@@ -35,9 +35,15 @@ useEffect(()=> {
     
       <div className='container'>
         <h2>DELIGHT RECIPES</h2>
-        <div classname="recipes">
+        <div className="recipes">
 
-          {recipes? recipes.map((recipe => ))}
+          {recipes? recipes.map(recipe => (
+            <RecipeCard 
+            key={recipe.idMeal}
+            recipe={recipe}
+            />
+
+          )): "Oops Recipes not found!"};
 
         </div>
         </div>
